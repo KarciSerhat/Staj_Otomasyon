@@ -1,0 +1,1139 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Firat Api",
+        "version": "0.1"
+    },
+    "paths": {
+        "/api/v1/announcement/all": {
+            "get": {
+                "tags": [
+                    "Duyuru"
+                ],
+                "description": "Duyuruları Getir",
+                "operationId": "8396949637b91c4430172b8fe2a7702d",
+                "responses": {
+                    "200": {
+                        "description": "İşlem başarılı"
+                    },
+                    "400": {
+                        "description": "Geçersiz istek"
+                    },
+                    "401": {
+                        "description": "Yetkisiz"
+                    },
+                    "500": {
+                        "description": "Sunucu hatası"
+                    }
+                }
+            }
+        },
+        "/api/v1/announcement/get": {
+            "get": {
+                "tags": [
+                    "Duyuru"
+                ],
+                "description": "Duyuruları id'ye göre getir",
+                "operationId": "7115d5bf8fdfa50c7a3c8aeddc81d117",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Parametre açıklaması",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Server Error"
+                    }
+                }
+            }
+        },
+        "/api/v1/announcement/create": {
+            "post": {
+                "tags": [
+                    "Duyuru"
+                ],
+                "description": "Duyuru Oluştur",
+                "operationId": "e14b779997a9fd41a47f0825134dac67",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "title",
+                                    "content"
+                                ],
+                                "properties": {
+                                    "title": {
+                                        "type": "string"
+                                    },
+                                    "content": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "İşlem başarılı"
+                    },
+                    "400": {
+                        "description": "Geçersiz istek"
+                    },
+                    "401": {
+                        "description": "Yetkisiz"
+                    },
+                    "500": {
+                        "description": "Sunucu hatası"
+                    }
+                }
+            }
+        },
+        "/api/v1/announcement/update": {
+            "post": {
+                "tags": [
+                    "Duyuru"
+                ],
+                "description": "Duyuru Güncelle",
+                "operationId": "700110217a525de6883622e8d0dd8935",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "id"
+                                ],
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    },
+                                    "title": {
+                                        "type": "string"
+                                    },
+                                    "content": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "İşlem başarılı"
+                    },
+                    "400": {
+                        "description": "Geçersiz istek"
+                    },
+                    "401": {
+                        "description": "Yetkisiz"
+                    },
+                    "500": {
+                        "description": "Sunucu hatası"
+                    }
+                }
+            }
+        },
+        "/api/v1/announcement/delete": {
+            "post": {
+                "tags": [
+                    "Duyuru"
+                ],
+                "description": "Duyuru Sil",
+                "operationId": "0b5912d4d5caade371af46b43fbb2cf4",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "id"
+                                ],
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "İşlem başarılı"
+                    },
+                    "400": {
+                        "description": "Geçersiz istek"
+                    },
+                    "401": {
+                        "description": "Yetkisiz"
+                    },
+                    "500": {
+                        "description": "Sunucu hatası"
+                    }
+                }
+            }
+        },
+        "/api/v1/company/all": {
+            "get": {
+                "tags": [
+                    "Şirket"
+                ],
+                "description": "Şirketleri getir",
+                "operationId": "77b976ac79aaa88bb39a2df0af5cea71",
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Server Error"
+                    }
+                }
+            }
+        },
+        "/api/v1/company/get": {
+            "get": {
+                "tags": [
+                    "Şirket"
+                ],
+                "description": "Şirketleri id'ye göre getir",
+                "operationId": "0408774545cbf0d5384e7c4ed063a566",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Parametre açıklaması",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Server Error"
+                    }
+                }
+            }
+        },
+        "/api/v1/company/create": {
+            "post": {
+                "tags": [
+                    "Şirket"
+                ],
+                "description": "Şirket oluştur",
+                "operationId": "a54018bd5330e0dbe1d7b00c23a29710",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "number",
+                                    "adres",
+                                    "vergi_no",
+                                    "order_data"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "number": {
+                                        "type": "integer"
+                                    },
+                                    "adres": {
+                                        "type": "string"
+                                    },
+                                    "vergi_no": {
+                                        "type": "string"
+                                    },
+                                    "order_data": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "İşlem başarılı"
+                    },
+                    "400": {
+                        "description": "Geçersiz istek"
+                    },
+                    "401": {
+                        "description": "Yetkisiz"
+                    },
+                    "500": {
+                        "description": "Sunucu hatası"
+                    }
+                }
+            }
+        },
+        "/api/v1/company/update": {
+            "post": {
+                "tags": [
+                    "Şirket"
+                ],
+                "description": "Şirket Güncelle",
+                "operationId": "9c7dbb9e4cad8fa50718b4b0a6186473",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "id"
+                                ],
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "number": {
+                                        "type": "integer"
+                                    },
+                                    "adres": {
+                                        "type": "string"
+                                    },
+                                    "vergi_no": {
+                                        "type": "string"
+                                    },
+                                    "order_data": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "İşlem başarılı"
+                    },
+                    "400": {
+                        "description": "Geçersiz istek"
+                    },
+                    "401": {
+                        "description": "Yetkisiz"
+                    },
+                    "500": {
+                        "description": "Sunucu hatası"
+                    }
+                }
+            }
+        },
+        "/api/v1/company/delete": {
+            "post": {
+                "tags": [
+                    "Şirket"
+                ],
+                "description": "Şirket Sil",
+                "operationId": "a92d4224e988102cb995495882a3bab4",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "id"
+                                ],
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "İşlem başarılı"
+                    },
+                    "400": {
+                        "description": "Geçersiz istek"
+                    },
+                    "401": {
+                        "description": "Yetkisiz"
+                    },
+                    "500": {
+                        "description": "Sunucu hatası"
+                    }
+                }
+            }
+        },
+        "/api/v1/company/checkCompany": {
+            "post": {
+                "tags": [
+                    "Şirket"
+                ],
+                "description": "Şirket Sorgula",
+                "operationId": "abeacfd5519723407e7410e54e308ceb",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "vergi_no"
+                                ],
+                                "properties": {
+                                    "vergi_no": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "İşlem başarılı"
+                    },
+                    "400": {
+                        "description": "Geçersiz istek"
+                    },
+                    "401": {
+                        "description": "Yetkisiz"
+                    },
+                    "500": {
+                        "description": "Sunucu hatası"
+                    }
+                }
+            }
+        },
+        "/api/v1/dateofintern/all": {
+            "get": {
+                "tags": [
+                    "Staj Tarihi"
+                ],
+                "description": "Staj Tarihlerini Getir",
+                "operationId": "9a592c284fc324c3acb7d288f94030f9",
+                "responses": {
+                    "200": {
+                        "description": "İşlem başarılı"
+                    },
+                    "400": {
+                        "description": "Geçersiz istek"
+                    },
+                    "401": {
+                        "description": "Yetkisiz"
+                    },
+                    "500": {
+                        "description": "Sunucu hatası"
+                    }
+                }
+            }
+        },
+        "/api/v1/dateofintern/get": {
+            "get": {
+                "tags": [
+                    "Staj Tarihi"
+                ],
+                "description": "Staj Tarihlerini id'ye Göre Getir",
+                "operationId": "ea0d911e9d904b6474e605b2ca8de21d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Parametre açıklaması",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Server Error"
+                    }
+                }
+            }
+        },
+        "/api/v1/dateofintern/create": {
+            "post": {
+                "tags": [
+                    "Staj Tarihi"
+                ],
+                "description": "Staj Tarihi Oluştur",
+                "operationId": "99c42960c7cff73c7bac9a4099ab810b",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "start_date",
+                                    "expire_date"
+                                ],
+                                "properties": {
+                                    "start_date": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "date_format": "m/d/Y"
+                                    },
+                                    "expire_date": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "date_format": "m/d/Y"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "İşlem başarılı"
+                    },
+                    "400": {
+                        "description": "Geçersiz istek"
+                    },
+                    "401": {
+                        "description": "Yetkisiz"
+                    },
+                    "500": {
+                        "description": "Sunucu hatası"
+                    }
+                }
+            }
+        },
+        "/api/v1/dateofintern/update": {
+            "post": {
+                "tags": [
+                    "Staj Tarihi"
+                ],
+                "description": "Staj Tarihi Güncelle",
+                "operationId": "7d4a5b8094ba87772eb93eccc9ce0d7e",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "id"
+                                ],
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    },
+                                    "start_date": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "date_format": "m/d/Y"
+                                    },
+                                    "expire_date": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "date_format": "m/d/Y"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "İşlem başarılı"
+                    },
+                    "400": {
+                        "description": "Geçersiz istek"
+                    },
+                    "401": {
+                        "description": "Yetkisiz"
+                    },
+                    "500": {
+                        "description": "Sunucu hatası"
+                    }
+                }
+            }
+        },
+        "/api/v1/dateofintern/delete": {
+            "post": {
+                "tags": [
+                    "Staj Tarihi"
+                ],
+                "description": "Staj Tarihi Sil",
+                "operationId": "f369cbb276d0b83a0d0baf7f29aeda07",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "id"
+                                ],
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "İşlem başarılı"
+                    },
+                    "400": {
+                        "description": "Geçersiz istek"
+                    },
+                    "401": {
+                        "description": "Yetkisiz"
+                    },
+                    "500": {
+                        "description": "Sunucu hatası"
+                    }
+                }
+            }
+        },
+        "/api/v1/internshipdocument/all": {
+            "get": {
+                "tags": [
+                    "Staj Doküman"
+                ],
+                "description": "Staj Dokümanları getir",
+                "operationId": "b73523d12678def3ee6085f8c9c545be",
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Server Error"
+                    }
+                }
+            }
+        },
+        "/api/v1/internshipdocument/get": {
+            "get": {
+                "tags": [
+                    "Staj Doküman"
+                ],
+                "description": "Staj Doküman id'ye göre getir",
+                "operationId": "fb313f422c07907a4127697cdaec45e0",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Parametre açıklaması",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Server Error"
+                    }
+                }
+            }
+        },
+        "/api/v1/internshipdocument/create": {
+            "post": {
+                "tags": [
+                    "Staj Doküman"
+                ],
+                "description": "Staj Dokümanı Oluştur",
+                "operationId": "01737caba29f0d8f6cd2fa4843e34faa",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "internship_accept",
+                                    "internship_payment_accept",
+                                    "insurance_required",
+                                    "user_id"
+                                ],
+                                "properties": {
+                                    "user_id": {
+                                        "type": "integer"
+                                    },
+                                    "insurance_required": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "internship_accept": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "internship_payment_accept": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "İşlem başarılı"
+                    },
+                    "400": {
+                        "description": "Geçersiz istek"
+                    },
+                    "401": {
+                        "description": "Yetkisiz"
+                    },
+                    "500": {
+                        "description": "Sunucu hatası"
+                    }
+                }
+            }
+        },
+        "/api/v1/internshipdocument/update": {
+            "post": {
+                "tags": [
+                    "Staj Doküman"
+                ],
+                "description": "Staj Dokümanı Oluştur",
+                "operationId": "db1d7a577464af7a88f4ced16628519c",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "id",
+                                    "user_id",
+                                    "internship_accept",
+                                    "internship_payment_accept",
+                                    "insurance_required"
+                                ],
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    },
+                                    "user_id": {
+                                        "type": "integer"
+                                    },
+                                    "insurance_required": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "internship_accept": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "internship_payment_accept": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "İşlem başarılı"
+                    },
+                    "400": {
+                        "description": "Geçersiz istek"
+                    },
+                    "401": {
+                        "description": "Yetkisiz"
+                    },
+                    "500": {
+                        "description": "Sunucu hatası"
+                    }
+                }
+            }
+        },
+        "/api/v1/internshipdocument/delete": {
+            "post": {
+                "tags": [
+                    "Staj Doküman"
+                ],
+                "description": "Staj Dokümanı Sil",
+                "operationId": "d147a2036079ba2dd3acffae8c7185ee",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "id",
+                                    "user_id"
+                                ],
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "İşlem başarılı"
+                    },
+                    "400": {
+                        "description": "Geçersiz istek"
+                    },
+                    "401": {
+                        "description": "Yetkisiz"
+                    },
+                    "500": {
+                        "description": "Sunucu hatası"
+                    }
+                }
+            }
+        },
+        "/api/v1/internshipperiot/all": {
+            "get": {
+                "tags": [
+                    "Staj Dönemi"
+                ],
+                "description": "Staj Dönemlerini Getir",
+                "operationId": "9f70c0d16962d4f962fcb2aa063ec95a",
+                "responses": {
+                    "200": {
+                        "description": "İşlem başarılı"
+                    },
+                    "400": {
+                        "description": "Geçersiz istek"
+                    },
+                    "401": {
+                        "description": "Yetkisiz"
+                    },
+                    "500": {
+                        "description": "Sunucu hatası"
+                    }
+                }
+            }
+        },
+        "/api/v1/internshipperiot/get": {
+            "get": {
+                "tags": [
+                    "Staj Dönemi"
+                ],
+                "description": "Staj Dönemini id'ye göre getir",
+                "operationId": "636bcc39ce3806b4f880378328585e3d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Parametre açıklaması",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Server Error"
+                    }
+                }
+            }
+        },
+        "/api/v1/internshipperiot/create": {
+            "post": {
+                "tags": [
+                    "Staj Dönemi"
+                ],
+                "description": "Staj Dönemi Oluştur",
+                "operationId": "ff664534b91e9fa63fc0e2b82837c0e2",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "periot_start_date",
+                                    "expire_date",
+                                    "periot_type"
+                                ],
+                                "properties": {
+                                    "periot_start_date": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "date_format": "m/d/Y"
+                                    },
+                                    "periot_expire_date": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "date_format": "m/d/Y"
+                                    },
+                                    "periot_type": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "İşlem başarılı"
+                    },
+                    "400": {
+                        "description": "Geçersiz istek"
+                    },
+                    "401": {
+                        "description": "Yetkisiz"
+                    },
+                    "500": {
+                        "description": "Sunucu hatası"
+                    }
+                }
+            }
+        },
+        "/api/v1/internshipperiot/update": {
+            "post": {
+                "tags": [
+                    "Staj Dönemi"
+                ],
+                "description": "Staj Dönemi Güncelle",
+                "operationId": "895b8902eee51b5184e80902e84f675f",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "id",
+                                    "periot_start_date",
+                                    "expire_date",
+                                    "periot_type"
+                                ],
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    },
+                                    "periot_start_date": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "date_format": "m/d/Y"
+                                    },
+                                    "periot_expire_date": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "date_format": "m/d/Y"
+                                    },
+                                    "periot_type": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "İşlem başarılı"
+                    },
+                    "400": {
+                        "description": "Geçersiz istek"
+                    },
+                    "401": {
+                        "description": "Yetkisiz"
+                    },
+                    "500": {
+                        "description": "Sunucu hatası"
+                    }
+                }
+            }
+        },
+        "/api/v1/internshipperiot/delete": {
+            "post": {
+                "tags": [
+                    "Staj Dönemi"
+                ],
+                "description": "Staj Dönemi Sil",
+                "operationId": "0b4d37bf7936a724953e5446ec8a1420",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "id"
+                                ],
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "İşlem başarılı"
+                    },
+                    "400": {
+                        "description": "Geçersiz istek"
+                    },
+                    "401": {
+                        "description": "Yetkisiz"
+                    },
+                    "500": {
+                        "description": "Sunucu hatası"
+                    }
+                }
+            }
+        },
+        "/api/v1/user/info": {
+            "get": {
+                "tags": [
+                    "Kullanıcı Bilgileri"
+                ],
+                "description": "Kullanıcı Bilgilerini Getir",
+                "operationId": "204188cd36d789d9f4b46ede80c706d8",
+                "responses": {
+                    "200": {
+                        "description": "İşlem başarılı"
+                    },
+                    "400": {
+                        "description": "Geçersiz istek"
+                    },
+                    "401": {
+                        "description": "Yetkisiz"
+                    },
+                    "500": {
+                        "description": "Sunucu hatası"
+                    }
+                }
+            }
+        },
+        "/api/v1/user/auth/check": {
+            "get": {
+                "tags": [
+                    "Kullanıcı Bilgileri"
+                ],
+                "description": "Kullanıcı Giriş Yapmış mı?",
+                "operationId": "130728dd7c19d1b832749e9c516b74d1",
+                "responses": {
+                    "200": {
+                        "description": "İşlem başarılı"
+                    },
+                    "400": {
+                        "description": "Geçersiz istek"
+                    },
+                    "401": {
+                        "description": "Yetkisiz"
+                    },
+                    "500": {
+                        "description": "Sunucu hatası"
+                    }
+                }
+            }
+        }
+    }
+}
